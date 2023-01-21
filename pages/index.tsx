@@ -4,11 +4,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 import Router from 'next/router'
 
+// components
+import map from "../components/map";
+import test from "./test"
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Button } from "antd";
+
 
 export default function App() {
   
@@ -20,6 +25,7 @@ export default function App() {
     Router.push('/login')
   }
 
+  
   return (
     <>
     <Suspense fallback="loading">
@@ -34,8 +40,10 @@ export default function App() {
         modules={[Pagination]}
         className="mySwiper"
       >
-        <SwiperSlide>앱 이름</SwiperSlide>
-        <SwiperSlide>앱 기능 설명1</SwiperSlide>
+        <SwiperSlide>
+          {map()}
+          </SwiperSlide>
+        <SwiperSlide>{test()}앱 기능 설명1</SwiperSlide>
         <SwiperSlide>앱 기능 설명2</SwiperSlide>
         <SwiperSlide>앱 기능 설명3</SwiperSlide>
         <SwiperSlide>앱 기능 설명4</SwiperSlide>
